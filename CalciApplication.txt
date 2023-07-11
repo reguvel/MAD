@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="294dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginLeft="59dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginRight="58dp"
+        android:layout_marginBottom="59dp"
+        android:text="Simple Calculator"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="37dp"
+        android:ems="10"
+        android:hint="Enter The Number 1:"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="384dp"
+        android:ems="10"
+        android:hint="Enter The Number 2:"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="192dp"
+        android:layout_marginRight="192dp"
+        android:layout_marginBottom="294dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="40dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginBottom="164dp"
+        android:onClick="doAdd"
+        android:text="ADD" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:layout_marginBottom="164dp"
+        android:onClick="doSub"
+        android:text="SUB" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginBottom="75dp"
+        android:onClick="doMul"
+        android:text="MUL" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:layout_marginBottom="75dp"
+        android:onClick="doDiv"
+        android:text="DIV" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="262dp"
+        android:layout_marginRight="262dp"
+        android:layout_marginBottom="16dp"
+        android:text="G Reguvel -Y21CS043"
+        android:textSize="14sp" />
+</RelativeLayout>
+package com.example.calciapplication;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    EditText e1,e2;
+    TextView tv;
+
+    @Override protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        e1 =(EditText)findViewById(R.id.editText1);
+        e2 = (EditText)findViewById(R.id.editText2);
+        tv= (TextView)findViewById(R.id.textView1);
+    }
+    public void doAdd(View v){
+        int a1=Integer.parseInt(e1.getText().toString());
+        int a2= Integer.parseInt(e2.getText().toString());
+        int result=a1+a2;
+        tv.setText(""+result);
+    }
+    public void doSub(View v){
+        int a1=Integer.parseInt(e1.getText().toString());
+        int a2= Integer.parseInt(e2.getText().toString());
+        int result=a1-a2;
+        tv.setText(""+result);
+    }
+    public void doMul(View v){
+        int a1=Integer.parseInt(e1.getText().toString());
+        int a2= Integer.parseInt(e2.getText().toString());
+        int result=a1*a2;
+        tv.setText(""+result);
+    }
+    public void doDiv(View v){
+        float a1=Integer.parseInt(e1.getText().toString());
+        float a2= Integer.parseInt(e2.getText().toString());
+        float result=a1/a2;
+        tv.setText(""+result);
+    }
+}

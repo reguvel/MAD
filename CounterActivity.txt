@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/headingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:text="Counter Application" />
+
+    <TextView
+        android:id="@+id/counterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:onClick="startCounter" />
+
+    <Button
+        android:id="@+id/stopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:onClick="stopCounter" />
+
+</LinearLayout>
+
+package com.example.counteractivity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+public class MainActivity extends AppCompatActivity {
+    private TextView counterTextView;
+    private Button startButton;
+    private Button stopButton;
+    private Handler handler;
+    private int counter;
+    private boolean isCounterRunning;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        counterTextView = findViewById(R.id.counterTextView);
+        startButton = findViewById(R.id.startButton);
+        stopButton = findViewById(R.id.stopButton);
+
+        handler = new Handler();
+        counter = 0;
+        isCounterRunning = false;
+    }
+
+    public void startCounter(View view) {
+        if (!isCounterRunning) {
+            isCounterRunning = true;
+            handler.postDelayed(counterRunnable, 1000);
+        }
+    }
+
+    public void stopCounter(View view) {
+        if (isCounterRunning) {
+            isCounterRunning = false;
+            handler.removeCallbacks(counterRunnable);
+        }
+    }
+
+    private Runnable counterRunnable = new Runnable() {
+        @Override
+        public void run() {
+            counter++;
+            counterTextView.setText(String.valueOf(counter));
+            handler.postDelayed(this, 1000);
+        }
+    };
+}
