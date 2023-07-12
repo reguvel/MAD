@@ -1,0 +1,69 @@
+1)	What is Android?
+Android is a software package and linux based operating system for mobile devices such as tablet computers and smartphones.
+2)	What is the Google Android SDK?
+The Android SDK is a software development kit that includes a comprehensive set of development tools.
+3)	What is the Android Architecture?
+Android architecture supports android device needs that includes a Linux kernel, an application framework, libraries, a runtime environment, and a set of applications.
+4)	 Describe the Android Framework.
+An Android application framework is a software toolkit that enables app developers to piece together a finished product that meets the requirements of its proprietor
+5)	What is AAPT?
+The Android Asset Packaging Tool (aapt) takes your application resource files, such as the AndroidManifest.xml file and the XML files for your Activities, and compiles them.
+6)	What is the importance of having an emulator within the Android environment?
+The Android Emulator simulates Android devices on your computer so that you can test your application on a variety of devices and Android API levels without needing to have each physical device.
+7)	What is the use of an activityCreator?
+Activity creator is the first step towards the creation of new Android project
+8)	Describe Activities.
+An activity in Android is a specific combination of XML files and JAVA files.
+9)	What are Intents?
+An intent lets you start an activity in another app by describing an action you'd like to perform
+10)	Differentiate Activities from Services.
+Services are a unique component in Android that allows an application to run in the background to execute long-running operation activities, on the other hand, an activity, like a window or a frame in Java, represents a single screen with a user interface.
+11)	What items are important in every Android project?
+AndroidManifest.xml
+build.xml
+bin/
+src/
+res/
+assets/
+12)	What is the importance of XML-based layouts?
+Using XML files also makes it easy to provide different layouts for different screen sizes and orientations 
+13)	What are containers?
+A container is a view used to contain other views.
+14)	What is Orientation?
+Screen Orientation, also known as screen rotation, is the attribute of activity element in android.
+15)	What is the importance of Android in the mobile market?
+Developers can write and register apps that will specifically run under the Android environment.
+16)	What do you think are some disadvantages of Android?
+Hardware Quality is Mixed. ...
+You Need a Google Account. ...
+Updates Are Patchy. ...
+Many Ads in Apps. ...
+They Have Bloatware.
+
+17)	What is adb?
+Android Debug Bridge
+18)	What are the four essential states of an activity?
+Active , Paused , Stopped and Destroyed 
+19)	What is ANR?
+Application Not Responding,” is a type of error that occurs when an Android app is unresponsive for a prolonged period of time.
+20)	Which elements can occur only once and must be present?
+Among the different elements, the “and” elements must be present and can occur only once. The rest are optional, which can occur as many times as needed.
+21)	How are escape characters used as attribute?
+The smart tag syntax supports escape characters for the double quotation mark ("), backslash (\), and comma (,) characters only.
+22)	What is the importance of settings permissions in app development?
+Permission allows certain restrictions to be imposed primarily to protect data and code
+23)	What is the function of an intent filter?
+An intent filter declares the capabilities of its parent component: what an activity or service can do and what types of broadcasts a receiver can handle. 
+24)	Enumerate the three key loops when monitoring an activity
+Entire lifetime ? activity happens between onCreate and onDestroy.
+Visible lifetime ? activity happens between onStart and onStop.
+Foreground lifetime ? activity happens between onResume and onPause.
+
+25)	When is the onStop() method invoked?
+when an activity is no longer visible to the user
+
+
+
+
+
+
